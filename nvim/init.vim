@@ -34,10 +34,6 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=85
-
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -75,7 +71,8 @@ call plug#end()
 
 let g:tokyonight_style = "strom"
 let g:tokyonight_italics_functions = 1
-
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+let g:tokyonight_dark_sidebar = 1
 let g:lightline = {'colorscheme': 'tokyonight'}
 
 colorscheme tokyonight
