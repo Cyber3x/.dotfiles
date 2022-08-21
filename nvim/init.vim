@@ -67,6 +67,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'sheerun/vim-polyglot'
     Plug 'itchyny/lightline.vim'
     Plug 'ryanoasis/vim-devicons' " always load last
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 let g:tokyonight_style = "strom"
