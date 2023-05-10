@@ -1,7 +1,0 @@
-alias name="echo my name is Cyber"
-
-alias ppath="echo $PATH | tr ':' '\n'"
-alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage"
-alias lf="ls -lhd */"
-alias cll="clear && l"
-alias files="xdg-open ."
