@@ -2,9 +2,17 @@
 
 ## Compoennts
 
-- [Tmux](https://github.com/tmux/tmux/wiki)
+- [Tmux](#tmux)
 
-- [Alacritty](https://github.com/Cyber3x/dotfiles#alacritty)
+- [Alacritty](#alacritty)
+
+- [Neovim](#neovim)
+
+---
+
+## tmux
+
+_TODO_
 
 ---
 
@@ -41,7 +49,3 @@ Symlinks:
 **Colorscheme**
 
 - [Tokyo Night Storm](https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty_tokyonight_storm.yml)
-
-## Oh-My-Zsh
-
-_TODO_
