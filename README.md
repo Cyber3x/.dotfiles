@@ -1,6 +1,8 @@
 # cyber's dotfiles
 
-## Compoennts
+## Configs for
+
+- [Bash]()
 
 - [Tmux](#tmux)
 
