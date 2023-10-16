@@ -26,4 +26,5 @@ alias gc="git checkout"
 
 alias ls="exa"
 alias ll="exa -lF"
+alias sl="ls"
 alias la="exa -laF"

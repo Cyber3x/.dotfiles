@@ -1,22 +1,26 @@
 export PATH="/usr/share/code/bin:$PATH"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/libasound.so.2
 export PATH="$HOME/programming/flutter/bin:$PATH"
-export PATH="$HOME/.bash_scripts:$PATH"
 export PATH="$HOME/programming/tech/android-studio/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/tools/geckodriver-v0.33.0-linux64:$PATH"
-export PATH="$HOME/tools:$PATH"
 
+paths="
+	$HOME/tools
+	$HOME/.bash_scripts
+"
 
-export PATH="$HOME/faks/oprpp1/maven/apache-maven-3.9.4/bin:$PATH"
+for path in $paths; do
+	export PATH="$path:$PATH"
+done
 
 export ANDROID_HOME="$HOME/Android/Sdk"
 
 
 
-paths="platform-tools cmdline-tools/latest/bin"
-for path in $paths; do
+android_paths="platform-tools cmdline-tools/latest/bin"
+for path in $android_paths; do
 	export PATH="$ANDROID_HOME/$path:$PATH"
 done
 
