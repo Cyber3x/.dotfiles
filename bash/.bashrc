@@ -123,3 +123,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/gitstatus/gitstatus.prompt.sh
+eval "$(zoxide init bash)"

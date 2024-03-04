@@ -5,6 +5,7 @@ export PATH="$HOME/programming/tech/android-studio/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/tools/geckodriver-v0.33.0-linux64:$PATH"
+export PATH="$HOME/faks/oprpp1/maven/apache-maven-3.9.4/bin:$PATH"
 
 paths="
 	$HOME/tools
