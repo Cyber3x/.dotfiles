@@ -78,6 +78,9 @@ alias l='ls -CF'
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+
+
+
 BASH_DOTFILES="$HOME/.dotfiles/bash"
 if [ -f $BASH_DOTFILES/.bash_aliases ]; then
     . $BASH_DOTFILES/.bash_aliases
@@ -124,3 +127,19 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/gitstatus/gitstatus.prompt.sh
 eval "$(zoxide init bash)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# script that can asks user for a confirmation before running the command that's after it
+confirm() {
+    echo - "Do you want to run: $*? [N/y] "
+    read -N 1 REPLY
+    echo
+    if test "$REPLY" = "y" -o "$REPLY" = "Y"; then
+	"$@"
+    else
+    	echo "Cancelled by user"
+    fi
+}
