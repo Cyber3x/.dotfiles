@@ -143,3 +143,13 @@ confirm() {
     	echo "Cancelled by user"
     fi
 }
+
+convert_and_compress() {
+    directory="${1:-.}"
+    for file in "$directory"/*.jpg; do
+        if [ -f "$file" ]; then
+            output_file="${file%.jpg}_min.jpg"
+            convert "$file" -quality 50% -resize 1280x720 "$output_file"
+        fi
+    done
+}
