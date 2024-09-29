@@ -15,9 +15,7 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+# check the window size after each command and, if necessary, update the values of LINES and COLUMNS. shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -132,6 +130,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
 # script that can asks user for a confirmation before running the command that's after it
 confirm() {
     echo - "Do you want to run: $*? [N/y] "
@@ -152,4 +153,9 @@ convert_and_compress() {
             convert "$file" -quality 50% -resize 1280x720 "$output_file"
         fi
     done
+}
+
+sstohere() {
+    mv "$(find ~/Pictures/Screenshots/ -maxdepth 1 -type f | sort | tail -1)" .
+    # TODO: fix this
 }

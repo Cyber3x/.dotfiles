@@ -18,11 +18,11 @@ done
 
 export ANDROID_HOME="$HOME/Android/Sdk"
 
-
+export DOTNET_ROOT=/snap/dotnet-runtime-80/current
 
 android_paths="platform-tools cmdline-tools/latest/bin"
 for path in $android_paths; do
 	export PATH="$ANDROID_HOME/$path:$PATH"
 done
 
-
+export FZF_DEFAULT_OPTS="--height=30% --layout=reverse --info=inline --border"

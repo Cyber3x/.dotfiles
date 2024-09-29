@@ -43,7 +43,7 @@ window:
   #     - none: Neither borders nor title bar
   decorations: none
 
-  opacity: 0.98
+  opacity: 1 
 
   # Values for `startup_mode`:
   #   - Windowed
