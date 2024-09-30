@@ -13,7 +13,7 @@
 set -e
 
 # Edit your config
-$EDITOR nixos-laptop.nix
+$EDITOR $1
 
 # cd to your config dir
 pushd ~/.dotfiles/nixos/
