@@ -13,7 +13,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -117,6 +116,9 @@
     bat
     stow
     eza
+    file
+    btop
+    spotify
   ];
 
   programs.nix-ld.enable = true;
