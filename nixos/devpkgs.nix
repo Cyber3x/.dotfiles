@@ -3,5 +3,6 @@
     cargo
     go
     gcc
+    python3
   ];
 }

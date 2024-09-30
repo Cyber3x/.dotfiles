@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./devpkgs.nix
+    ./pkgs.nix
   ];
 
   # Bootloader.
@@ -88,36 +89,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    neovim
-    vscode
-    alacritty
-    xournalpp
-    git
-    jetbrains.pycharm-professional
-    jetbrains.idea-ultimate
-    jetbrains.jdk
-    jetbrains.goland
-    jetbrains.datagrip
-    jetbrains-mono
-    jetbrains-toolbox
-    jetbrains.webstorm
-    python3
-    tmux
-    alejandra
-    stow
-    eza
-    file
-    btop
-    spotify
-    obsidian
-    libnotify
-  ];
-
+  # Allow running normal binatires on nixos
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # add any missing dynamic lib for unpackaged programs here, NOT in the environment.systemPackages
