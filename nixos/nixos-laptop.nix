@@ -119,6 +119,7 @@
     file
     btop
     spotify
+    obsidian
   ];
 
   programs.nix-ld.enable = true;
