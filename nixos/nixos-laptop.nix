@@ -120,6 +120,7 @@
     btop
     spotify
     obsidian
+    libnotify
   ];
 
   programs.nix-ld.enable = true;
