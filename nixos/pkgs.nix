@@ -19,6 +19,7 @@
     spotify
     obsidian
     libnotify
+    devenv
 
     jetbrains.pycharm-professional
     jetbrains.idea-ultimate
