@@ -15,6 +15,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # nix.settings.experimental-features = ["nix-command" "flakes" ];
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
