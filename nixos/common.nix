@@ -93,6 +93,10 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk21;
+  };
 
   # Allow running normal binatires on nixos
   programs.nix-ld.enable = true;
