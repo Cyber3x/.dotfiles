@@ -4,5 +4,6 @@
     go
     gcc
     python3
+    pyenv
   ];
 }
