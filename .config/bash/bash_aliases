@@ -1,0 +1,14 @@
+alias reload="source ~/.bashrc"
+
+alias ..="cd .."
+alias files="xdg-open"
+
+alias ppath="echo $PATH | sed 's/:/\\n/g'"
+
+
+alias tls="tmux ls"
+alias tns="tmux new -s"
+alias tas="tmux a -t"
+
+alias py="python"
+alias py3="python"

@@ -1,0 +1,29 @@
+let mapleader = " "
+
+set scrolloff=0
+" Enable system clipboard integration
+set clipboard+=unnamed,ideaput
+set incsearch
+set ideajoin " join line from below to the end of this one
+set number relativenumber
+
+nnoremap \e :e ~/.ideavimrc<CR> " Quickly open IdeaVim configuration file with \e
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>:echo "IdeaVim configuration reloaded!"<CR>
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR> " ToggleDistractionFreeMode for clean interface
+" Reload IdeaVim configuration with a status bar message
+
+nnoremap <A-k> :m .-2<CR>==
+nnoremap <A-j> :m .+1<CR>==
+
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>T :action HideActiveWindow<CR>
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+nnoremap <leader>r :action ReformatCode<CR>
