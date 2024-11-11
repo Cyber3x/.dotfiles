@@ -17,16 +17,17 @@ render_timer = false
 size = 13.5
 
 [font.bold]
-#family = "Cascadia Mono"
-#style = "Bold"
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
 
 [font.italic]
-#family = "Cascadia Mono"
-#style = "Italic"
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
 
 [font.normal]
-#family = "CaskaydiaCove Nerd Font Mono "
-#style = "Regular"
+family = "JetBrainsMono Nerd Font Mono"
+#family = "CaskaydiaMono Nerd Font"
+style = "Regular"
 
 [font.offset]
 x = 0
@@ -133,7 +134,7 @@ history = 5000
 
 [window]
 decorations = "none"
-dynamic_padding = true
+dynamic_padding = false
 dynamic_title = true
 opacity = 1 
 startup_mode = "Windowed"
@@ -148,8 +149,8 @@ columns = 120
 lines = 30
 
 [window.padding]
-x = 10
-y = 10
+x = 7		
+y = 7
 
 [window.position]
 x = 260
