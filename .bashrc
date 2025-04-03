@@ -108,8 +108,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if ! command -v pyenv &> /dev/null; then
-	export PYENV_ROOT="$HOME/.pyenv"
-	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
-fi
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.local/bin/env"
+eval "$(zoxide init bash)"
+
+. "$HOME/.local/share/../bin/env"
+eval "$(uv generate-shell-completion bash)"
+. "$HOME/.cargo/env"

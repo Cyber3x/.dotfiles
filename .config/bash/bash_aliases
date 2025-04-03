@@ -1,14 +1,23 @@
 alias reload="source ~/.bashrc"
 
-alias ..="cd .."
-alias files="xdg-open"
+alias ..="z .."
+alias cd="z"
 
+alias files="xdg-open"
 alias ppath="echo $PATH | sed 's/:/\\n/g'"
 
+alias ls="eza --icons=always"
+alias l="ls -l"
+alias lsc="clear && l"
+alias la="ls -al"
+alias ll="ls -l"
+alias lt="ls --tree --level=2"
 
 alias tls="tmux ls"
 alias tns="tmux new -s"
 alias tas="tmux a -t"
 
+alias python3.12='uv run --python=3.12 python3'
+alias python3.14='uv run --python=3.14 python3'
+alias python="python3.14"
 alias py="python"
-alias py3="python"

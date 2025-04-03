@@ -1,5 +1,5 @@
 general.import = [
-    "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
+"~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
 ]
 
 [colors]
@@ -14,7 +14,7 @@ print_events = false
 render_timer = false
 
 [font]
-size = 13.5
+size = 11
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
@@ -136,7 +136,7 @@ history = 5000
 decorations = "none"
 dynamic_padding = false
 dynamic_title = true
-opacity = 1 
+opacity = 1
 startup_mode = "Windowed"
 title = "Alacritty"
 
@@ -149,8 +149,8 @@ columns = 120
 lines = 30
 
 [window.padding]
-x = 7		
-y = 7
+x = 4		
+y = 2
 
 [window.position]
 x = 260
