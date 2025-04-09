@@ -1,2 +1,11 @@
-export PATH=$PATH:/home/cyber/.cargo/bin
-export PATH=$PATH:/usr/local/go/bin
+PATH_DIRS=(
+    /usr/local/go/bin
+)
+
+# Loop through and add if not already present
+for dir in "${PATH_DIRS[@]}"; do
+  if [[ -d "$dir" && ":$PATH:" != *":$dir:"* ]]; then
+    export PATH="$PATH:$dir"
+  fi
+done
+
