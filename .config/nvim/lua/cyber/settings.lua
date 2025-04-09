@@ -3,6 +3,10 @@
 -- LazyVim auto format
 vim.g.autoformat = true
 
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
 local opt = vim.opt
 
 opt.number = true
@@ -14,7 +18,6 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
 
-opt.clipboard = "unnamedplus"
 opt.wrap = false
 
 opt.swapfile = false  -- Disables swap files
@@ -37,3 +40,5 @@ opt.isfname:append("@-@") -- Allows "@" in filenames
 opt.updatetime = 50
 
 opt.colorcolumn = "80"
+
+vim.g.mapleader = " "

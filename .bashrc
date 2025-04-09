@@ -117,4 +117,18 @@ eval "$(zoxide init bash)"
 
 . "$HOME/.local/share/../bin/env"
 eval "$(uv generate-shell-completion bash)"
+
 . "$HOME/.cargo/env"
+
+. ~/.config/bash/git-prompt.sh
+
+confirm() {
+    echo -n "Do you want to run $*? [N/y] "
+    read -N 1 REPLY
+    echo
+    if test "$REPLY" = "y" -o "$REPLY" = "Y"; then
+        "$@"
+    else
+        echo "Cancelled by user"
+    fi
+}
