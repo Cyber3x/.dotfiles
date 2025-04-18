@@ -112,7 +112,7 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. "$HOME/.local/bin/env"
+#. "$HOME/.local/bin/env"
 eval "$(zoxide init bash)"
 
 . "$HOME/.local/share/../bin/env"
@@ -132,3 +132,11 @@ confirm() {
         echo "Cancelled by user"
     fi
 }
+
+# pnpm
+export PNPM_HOME="/home/cyber/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
