@@ -1,0 +1,9 @@
+
+# zoxide
+eval "$(zoxide init bash)"
+
+# uv
+eval "$(uv generate-shell-completion bash)"
+
+# cargo
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"

@@ -26,7 +26,7 @@ style = "Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"
-#family = "CaskaydiaMono Nerd Font"
+#family = "Maple Mono Normal NL"
 style = "Regular"
 
 [font.offset]

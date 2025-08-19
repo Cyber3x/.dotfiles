@@ -106,6 +106,10 @@ nnoremap <c-z> :action ToggleDistractionFreeMode<CR> " ToggleDistractionFreeMode
 nnoremap <A-n> :tabnext<CR>
 nnoremap <A-p> :tabprev<CR>\
 
+" Scroll up down and center the cursor line
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
 " Easy visual indentation
 vnoremap < <gv
 vnoremap > >gv

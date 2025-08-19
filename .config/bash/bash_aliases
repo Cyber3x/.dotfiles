@@ -1,4 +1,4 @@
-alias breload="source ~/.bashrc"
+alias breload="source ~/.bashrc && echo '.bashrc reloaded!'"
 alias brcedit="nvim ~/.dotfiles/.bashrc && breload"
 alias baedit="nvim ~/.dotfiles/.config/bash/bash_aliases && breload"
 

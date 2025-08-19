@@ -1,5 +1,20 @@
+# --- History settings ---
+HISTCONTROL=ignoreboth         # No duplicate lines or leading spaces
+shopt -s histappend            # Append history instead of overwrite
+HISTSIZE=1000                  # Number of commands stored in memory
+HISTFILESIZE=2000              # Number of commands stored in file
+
+# --- Terminal behavior ---
+shopt -s checkwinsize          # Update window size after each command
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"  # Prettify less
+
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 PATH_DIRS=(
     /usr/local/go/bin
+    /go/bin
+    /usr/local/cuda-12.9/bin
+    "$HOME/.local/share/pnpm"
 )
 
 # Loop through and add if not already present
@@ -8,4 +23,9 @@ for dir in "${PATH_DIRS[@]}"; do
     export PATH="$PATH:$dir"
   fi
 done
+
+# nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
