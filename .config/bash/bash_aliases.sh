@@ -1,6 +1,6 @@
 alias breload="source ~/.bashrc && echo '.bashrc reloaded!'"
 alias brcedit="nvim ~/.dotfiles/.bashrc && breload"
-alias baedit="nvim ~/.dotfiles/.config/bash/bash_aliases && breload"
+alias baedit="nvim ~/.dotfiles/.config/bash/bash_aliases.sh && breload"
 
 alias v="nvim"
 
@@ -31,3 +31,6 @@ alias python3.14='uv run --python=3.14 python3'
 alias py="python"
 
 alias soff="xset dpms force off"
+
+alias fzf="fzf --style minimal \
+    --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
