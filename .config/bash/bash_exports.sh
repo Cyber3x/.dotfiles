@@ -15,6 +15,7 @@ PATH_DIRS=(
     /go/bin
     /usr/local/cuda-12.9/bin
     "$HOME/.local/share/pnpm"
+    /opt/nvim-linux-x86_64/bin
 )
 
 # Loop through and add if not already present
