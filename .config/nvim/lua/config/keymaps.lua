@@ -15,6 +15,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]) -- yank into system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", "\"_d") -- delete to the void
+vim.keymap.set({"n", "v"}, "<leader>d", "\"_d", {desc = "Delete into the void"}) -- delete to the void
 
 vim.keymap.set("n", "Q", "<nop>")
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below

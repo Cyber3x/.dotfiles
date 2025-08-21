@@ -1,7 +1,7 @@
 return {
     -- Mason: installs and manages external tools like LSP servers
     {
-        "mason-org/mason.nvim",
+    "mason-org/mason.nvim",
         opts = {
             ui = {
                 icons = {
@@ -15,9 +15,9 @@ return {
 
     -- mason-LSPConfig: tells Mason which servers to install and links them to lspconfig
     {
-    "mason-org/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { 
+            ensure_installed = {
                 "lua_ls",
                 "rust_analyzer"
             },
@@ -34,6 +34,8 @@ return {
         dependencies = { "hrsh7th/cmp-nvim-lsp" }, -- for completion capabilities
         config = function()
           local lspconfig = require("lspconfig")
+          
+          -- Get completion capabilities from nvim-cmp
           local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
           -- Lua LSP (great for editing Neovim configs)
@@ -56,6 +58,13 @@ return {
           lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
           }
+
+            -- Set up some useful keybinds for LSP features
+            -- These will only work when you're in a file with an active LSP
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show Documentation' })
+            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename Symbol' })
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Actions' })
         end,
   },
 }

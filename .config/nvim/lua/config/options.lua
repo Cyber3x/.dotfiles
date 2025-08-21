@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 --vim.opt.guicursor = ""
 
 -- LazyVim auto format
@@ -40,5 +42,3 @@ opt.isfname:append("@-@") -- Allows "@" in filenames
 opt.updatetime = 50
 
 opt.colorcolumn = "80"
-
-vim.g.mapleader = " "
