@@ -1,7 +1,26 @@
 return {
     {
         "folke/trouble.nvim",
-        opts = {}, -- for default options, refer to the configuration section for custom setup.
+        opts = {
+        }, -- for default options, refer to the configuration section for custom setup.
+
+        config = function()
+            require("trouble").setup({
+
+                -- Auto open trouble when there are diagnostics
+                -- TODO: the diagnostics are not auto opening
+                auto_open = true,
+                auto_close = false,
+
+                -- Position
+                position = "bottom", -- "bottom", "top", "left", "right"
+                height = 10,
+                width = 50,
+            })
+
+            -- Open on startup
+            vim.cmd("Trouble diagnostics")
+        end,
         cmd = "Trouble",
         keys = {
             {
