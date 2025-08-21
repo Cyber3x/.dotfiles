@@ -12,6 +12,7 @@ alias cd="z"
 alias files="xdg-open"
 alias ppath='echo "$PATH" | tr ":" "\n"'
 
+alias sl=ls
 alias ls="eza --icons=always"
 alias l="ls -l"
 alias lsc="clear && l"
