@@ -9,3 +9,11 @@ confirm() {
     fi
 }
 
+tldrsearch() {
+    tldr -l | fzf \
+      --border \
+      --preview-window='right:70%,nowrap' \
+      --prompt='tldr> ' \
+      --preview 'tldr {1} | bat -l bash --color=always'
+}
+
