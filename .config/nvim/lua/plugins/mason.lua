@@ -34,17 +34,32 @@ return {
         dependencies = { "hrsh7th/cmp-nvim-lsp" }, -- for completion capabilities
         config = function()
             local lspconfig = require("lspconfig")
-
-            -- Get completion capabilities from nvim-cmp
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            -- Lua LSP (great for editing Neovim configs)
+            -- One on_attach for all servers
+            local on_attach = function(client, bufnr)
+                local opts = { buffer = bufnr }
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+                if client.supports_method("textDocument/formatting") then
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        buffer = bufnr,
+                        callback = function() vim.lsp.buf.format({ async = false }) end,
+                    })
+                end
+            end
+
+            -- Lua config
             lspconfig.lua_ls.setup {
                 capabilities = capabilities,
+                on_attach = on_attach,
                 settings = {
                     Lua = {
                         runtime = { version = "LuaJIT" },
-                        diagnostics = { globals = { "vim" } }, -- recognize `vim` global
+                        diagnostics = { globals = { "vim" } },
                         workspace = {
                             library = vim.api.nvim_get_runtime_file("", true),
                             checkThirdParty = false,
@@ -54,36 +69,23 @@ return {
                 },
             }
 
-            -- Rust LSP (basic setup for now)
+            -- Rust config
             lspconfig.rust_analyzer.setup {
                 capabilities = capabilities,
+                on_attach = on_attach,
                 settings = {
-                    ["rust_analyzer"] = {
+                    ["rust-analyzer"] = {
                         rustfmt = {
                             overrideCommand = {
-                                "rustup", "run", "nightly", "rustfmt", "--config-path", "/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml"
-                            }
+                                "rustup", "run", "nightly", "rustfmt",
+                                "--config-path",
+                                "/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml",
+                            },
                         },
-                        checkOnSave = { command = "clippy" },
-                    }
+                        checkOnSave = true,
+                    },
                 },
-                on_attach = function(client, bufnr)
-                    if client.supports_method("textDocument/formatting") then
-                        vim.api.nvim_create_autocmd("BufWritePre", {
-                            buffer = bufnr,
-                            callback = function() vim.lsp.buf.format({ async = false }) end
-                        })
-                    end
-                end,
-                flags = { debounce_text_changes = 150 }, -- reduce cpu usage
             }
-
-            -- Set up some useful keybinds for LSP features
-            -- These will only work when you're in a file with an active LSP
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show Documentation' })
-            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename Symbol' })
-            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Actions' })
         end,
     },
 }
