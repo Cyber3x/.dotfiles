@@ -63,9 +63,19 @@ return {
                             overrideCommand = {
                                 "rustup", "run", "nightly", "rustfmt", "--config-path", "/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml"
                             }
-                        }
+                        },
+                        checkOnSave = { command = "clippy" },
                     }
-                }
+                },
+                on_attach = function(client, bufnr)
+                    if client.supports_method("textDocument/formatting") then
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            buffer = bufnr,
+                            callback = function() vim.lsp.buf.format({ async = false }) end
+                        })
+                    end
+                end,
+                flags = { debounce_text_changes = 150 }, -- reduce cpu usage
             }
 
             -- Set up some useful keybinds for LSP features
