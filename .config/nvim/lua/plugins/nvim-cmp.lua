@@ -40,13 +40,21 @@ return {
                 ["<C-e>"] = cmp.mapping.abort(), -- close menu
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-                -- suggestion navigation
-                ["<Tab>"] = cmp.mapping.select_next_item(),
-                ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-
-                -- docs
                 ["<A-j>"] = cmp.mapping.scroll_docs(4),  -- scroll down in docs
                 ["<A-k>"] = cmp.mapping.scroll_docs(-4), -- scroll up in docs
+
+
+                -- fix for when the completion window is open to quicly exit out of it:
+                ["<Esc>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.abort()
+                    end
+                    vim.api.nvim_feedkeys(
+                        vim.api.nvim_replace_termcodes("<Esc>", true, true, true),
+                        "n",
+                        true
+                    )
+                end, { "i", "s" })
             }),
             sources = {
                 { name = "nvim_lsp" },
