@@ -38,12 +38,14 @@ return {
 
             -- TODO: add styling for on hover pane
 
+
             -- One on_attach for all servers
             local on_attach = function(client, bufnr)
                 local opts = { buffer = bufnr }
 
                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "single" }) end, opts)
+                vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help({ border = "single" }) end, opts)
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
