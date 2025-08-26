@@ -36,9 +36,12 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+            -- TODO: add styling for on hover pane
+
             -- One on_attach for all servers
             local on_attach = function(client, bufnr)
                 local opts = { buffer = bufnr }
+
                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
                 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)

@@ -2,13 +2,12 @@ return {
     {
         "folke/trouble.nvim",
         opts = {
+            use_diagnostics_signs = true,
         }, -- for default options, refer to the configuration section for custom setup.
 
         config = function()
             require("trouble").setup({
-
                 -- Auto open trouble when there are diagnostics
-                -- TODO: the diagnostics are not auto opening
                 auto_open = true,
                 auto_close = false,
 
