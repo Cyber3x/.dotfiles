@@ -4,8 +4,6 @@
 -- `npm install -g cspell@latest`
 return {
     {
-        -- helloo world
-        -- some reallyyw wrongg text
         "nvimtools/none-ls.nvim",
         event = "VeryLazy",
         dependencies = { "davidmh/cspell.nvim" },
@@ -18,6 +16,8 @@ return {
                     diagnostics_postprocess = function(diagnostic)
                         diagnostic.severity = vim.diagnostic.severity.HINT
                     end,
+                    command = "cspell",
+                    args = { "--config", "~/.config/cspell/cspell.json" }
                 })
             )
             table.insert(opts.sources, cspell.code_actions)
