@@ -9,7 +9,14 @@ return {
                     package_pending = "➜",
                     package_uninstalled = "✗"
                 }
-            }
+            },
+            -- TODO: find out how to have some packages like spellcheckers auto enabled
+            -- ensure_installed = {
+            --  "cspell",
+            --       "misspell",
+            --      "codespell"
+            -- },
+            -- I thing ill have to use something like mason-tool-installer
         }
     },
 
@@ -19,7 +26,7 @@ return {
         opts = {
             ensure_installed = {
                 "lua_ls",
-                "rust_analyzer"
+                "rust_analyzer",
             },
         },
         dependencies = {
@@ -35,9 +42,6 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-            -- TODO: add styling for on hover pane
-
 
             -- One on_attach for all servers
             local on_attach = function(client, bufnr)

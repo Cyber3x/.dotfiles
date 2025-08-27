@@ -23,10 +23,16 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
 
+-- hwlo world
 opt.wrap = false
+--
+-- Enable spell checking
+vim.opt.spell = true
+-- Set language(s)
+vim.opt.spelllang = { "en_us" } -- you can add more, e.g. { "en_us", "de" }
 
-opt.swapfile = false -- Disables swap files
-opt.backup = false   -- Disables backup files
+opt.swapfile = false            -- Disables swap files
+opt.backup = false              -- Disables backup files
 
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
