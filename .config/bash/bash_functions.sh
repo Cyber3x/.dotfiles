@@ -17,3 +17,15 @@ tldrsearch() {
       --preview 'tldr {1} | bat -l bash --color=always'
 }
 
+# NOTE: override the default opening of nvim to stop me from opening file that don't exist
+nvim() {
+  for file in "$@"; do
+    # only check if it's not an option (starts with -)
+    if [ "${file#-}" = "$file" ] && [ ! -e "$file" ]; then
+      echo "nvim: $file does not exist" >&2
+      return 1
+    fi
+  done
+  command nvim "$@"
+}
+
