@@ -8,7 +8,7 @@ return {
         config = function()
             require("trouble").setup({
                 -- Auto open trouble when there are diagnostics
-                auto_open = true,
+                -- auto_open = true,
                 auto_close = false,
 
                 -- Position

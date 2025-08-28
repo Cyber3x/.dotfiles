@@ -26,7 +26,7 @@ return {
         opts = {
             ensure_installed = {
                 "lua_ls",
-                "rust_analyzer",
+                -- "rust_analyzer",
             },
         },
         dependencies = {
@@ -45,13 +45,25 @@ return {
 
             -- One on_attach for all servers
             local on_attach = function(client, bufnr)
-                local opts = { buffer = bufnr }
+                local opts = function(desc)
+                    return { buffer = bufnr, noremap = true, silent = true, desc = desc }
+                end
 
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "single" }) end, opts)
-                vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help({ border = "single" }) end, opts)
-                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+                -- LSP navigation
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("Go to definition"))
+                vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts("Go to Implementation")) -- Go to implementation
+                vim.keymap.set("n", "gr", vim.lsp.buf.references, opts("Show References"))          -- Show references
+
+                -- hover and signature help
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "single" }) end,
+                    opts("Hover Documentation"))
+                vim.keymap.set("n", "<C-k>", function() vim.lsp.buf.signature_help({ border = "single" }) end,
+                    opts("Signature Help"))
+
+                -- refactoring & code actions
+                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename Symbol"))
+                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
 
                 if client.supports_method("textDocument/formatting") then
                     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -78,10 +90,10 @@ return {
                 },
             }
 
-            -- Rust config
+            -- Rust analyzer setup
             lspconfig.rust_analyzer.setup {
-                capabilities = capabilities,
                 on_attach = on_attach,
+                capabilities = capabilities,
                 settings = {
                     ["rust-analyzer"] = {
                         rustfmt = {

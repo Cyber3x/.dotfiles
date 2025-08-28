@@ -7,7 +7,12 @@ return {
     },
     config = function()
         local api = require("nvim-tree.api")
-        require("nvim-tree").setup {}
+        require("nvim-tree").setup {
+            view = {
+                side = "right",
+                width = 50,
+            }
+        }
 
         -- Keymap to toggle file tree
         vim.keymap.set("n", "<leader>e", function()
@@ -19,5 +24,8 @@ return {
                 })
             end,
             { noremap = true, silent = true, desc = "Toggle NvimTree" })
+        -- Make <C-Right> and <C-Left> resize the tree
+        vim.keymap.set("n", "<C-Right>", ":vertical resize +5<CR>", { silent = true })
+        vim.keymap.set("n", "<C-Left>", ":vertical resize -5<CR>", { silent = true })
     end,
 }
