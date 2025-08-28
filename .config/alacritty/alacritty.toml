@@ -1,6 +1,9 @@
 general.import = [
-#"~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
+    #"~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
 ]
+
+[env]
+term = "xterm-256color"
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -14,7 +17,7 @@ print_events = false
 render_timer = false
 
 [font]
-size = 11
+size = 13
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
