@@ -8,6 +8,11 @@ return {
     config = function()
         local api = require("nvim-tree.api")
         require("nvim-tree").setup {
+            -- Automatically expand the tree to the current file
+            update_focused_file = {
+                enable = true,     -- enable updating the tree
+                update_cwd = true, -- optional: also update working directory
+            },
             view = {
                 side = "right",
                 width = 50,
