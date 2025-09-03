@@ -17,6 +17,10 @@ tldrsearch() {
       --preview 'tldr {1} | bat -l bash --color=always'
 }
 
+mansearch() {
+    man $(man -k . | fzf --prompt='Man Pages>' | awk '{print $1}')
+}
+
 # NOTE: override the default opening of nvim to stop me from opening file that don't exist
 nvim() {
   for file in "$@"; do
