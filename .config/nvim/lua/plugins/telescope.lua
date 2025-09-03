@@ -1,23 +1,37 @@
 return {
-    "nvim-telescope/telescope.nvim",
-    tag = '0.1.8',
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "folke/which-key.nvim" -- Add dependency to ensure loading order
-    },
-    config = function()
-        local builtin = require("telescope.builtin")
+	"nvim-telescope/telescope.nvim",
+	tag = "0.1.8",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"folke/which-key.nvim", -- Add dependency to ensure loading order
+	},
+	config = function()
+		local builtin = require("telescope.builtin")
+		local wk = require("which-key")
 
-        -- Set up the actual keymaps
-        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find Files" })
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Live Grep" })
-        vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Buffers" })
-        vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help Tags" })
+		local prefix = "<leader>s"
 
-        -- Register the group name with which-key (newer API)
-        local wk = require("which-key")
-        wk.add({
-            { "<leader>f", group = "Find" }
-        })
-    end,
+		local map = function(keys, func, desc, mode)
+			mode = mode or "n"
+			vim.keymap.set(mode, prefix .. keys, func, { desc = desc })
+		end
+
+		-- Set up the actual keymaps
+		map("h", builtin.help_tags, "[S]earch [H]elps")
+		map("k", builtin.keymaps, "[S]earch [K]eymaps")
+		map("f", builtin.find_files, "[S]earch [F]iles")
+		map("g", builtin.live_grep, "[S]earch by [G]rep")
+		map("s", builtin.builtin, "[S]earch [S]elect telescope")
+		map("w", builtin.grep_string, "[S]earch current [W]ord")
+		map("g", builtin.live_grep, "[S]earch by [G]rep")
+		map("d", builtin.diagnostics, "[S]earch [D]iagnostics")
+		map("r", builtin.resume, "[S]earch [R]esume")
+		map(".", builtin.oldfiles, '[S]earch Recent Files ("." for repeat)')
+
+		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+
+		wk.add({
+			{ prefix, group = "[S]earch" },
+		})
+	end,
 }

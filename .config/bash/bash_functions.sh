@@ -29,3 +29,23 @@ nvim() {
   command nvim "$@"
 }
 
+
+# run the tbtl ci pipeline locally in any directory
+local_ci() {
+    # Absolute path to allowed base dir
+    base_dir="/home/nlukic/programming/tbtl/mono/projects"
+
+    # Get current dir
+    current_dir=$(pwd)
+
+    # Check if current dir is inside base_dir
+    case "$current_dir" in
+        "$base_dir" | "$base_dir"/*)
+            "$base_dir/scripts/ci/rust/local_ci.sh"
+            ;;
+        *)
+            echo "❌ Error: You must be inside $base_dir (or its subdirectories) to run this command."
+            return 1
+            ;;
+    esac
+}
