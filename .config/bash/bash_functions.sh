@@ -33,7 +33,7 @@ nvim() {
 # run the tbtl ci pipeline locally in any directory
 local_ci() {
     # Absolute path to allowed base dir
-    base_dir="/home/nlukic/programming/tbtl/mono/projects"
+    base_dir="$HOME/programming/tbtl/mono/projects"
 
     # Get current dir
     current_dir=$(pwd)
