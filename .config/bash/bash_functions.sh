@@ -42,10 +42,21 @@ local_ci() {
     # Get current dir
     current_dir=$(pwd)
 
+    build_docs=true
+    if [[ "$1" == "--no-docs" ]]; then
+        build_docs=false
+    fi
+
     # Check if current dir is inside base_dir
     case "$current_dir" in
         "$base_dir" | "$base_dir"/*)
-            "$base_dir/scripts/ci/rust/local_ci.sh"
+            echo "Running local CI pipeline..."
+            "$base_dir/scripts/ci/rust/local_ci.sh" || return 1
+
+            if $build_docs; then
+                echo "Building documentation..."
+                srun "$base_dir/scripts/ci/rust/build_documentation.sh" || return 1
+            fi
             ;;
         *)
             echo "❌ Error: You must be inside $base_dir (or its subdirectories) to run this command."
