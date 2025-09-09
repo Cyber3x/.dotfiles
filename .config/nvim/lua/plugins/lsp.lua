@@ -147,15 +147,7 @@ return {
 							cargo = {
 								allFeatures = true,
 							},
-							rustfmt = {
-								overrideCommand = {
-									"rustup",
-									"run",
-									"nightly",
-									"rustfmt",
-									"--config-path=/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml",
-								},
-							},
+							rustfmt = {},
 						},
 					},
 				},
@@ -180,7 +172,7 @@ return {
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
-				ensure_insalled = {},
+				ensure_installed = {},
 				automatic_installation = false,
 				handlers = {
 					function(server_name)
