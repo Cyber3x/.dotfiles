@@ -3,6 +3,7 @@ require("config.options")
 require("config.keymaps")
 require("config.diagnostics")
 
+-- test, you can remove this line whenever
 -- Install `lazy.nvim` plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
