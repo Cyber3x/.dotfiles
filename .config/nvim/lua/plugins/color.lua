@@ -7,8 +7,10 @@ return {
 			flavour = "mocha",
 			integrations = {
 				lualine = true,
-				nerdtree = true,
+				nvimtree = true,
 				cmp = true,
+				telescope = true,
+				which_key = true,
 			},
 		},
 		config = function(_, opts)
