@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "nightfly",
+				theme = "catppuccin",
 				component_separators = "|",
 				section_separators = "",
 			},
