@@ -7,10 +7,6 @@ return {
 
 		config = function()
 			require("trouble").setup({
-				-- Auto open trouble when there are diagnostics
-				-- auto_open = true,
-				auto_close = false,
-
 				-- Position
 				position = "bottom", -- "bottom", "top", "left", "right"
 				height = 10,
