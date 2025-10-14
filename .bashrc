@@ -8,7 +8,6 @@ esac
 for file in ~/.config/bash/bash_{aliases,exports,functions,prompt,tools}.sh; do
     if [ -f "$file" ]; then
         . "$file"
-        echo "✅$file sourced"
     else
         echo "⚠️$file not found"
     fi
