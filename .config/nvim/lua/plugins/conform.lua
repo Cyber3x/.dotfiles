@@ -7,22 +7,23 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					rust = { "rustfmt", lsp_format = "fallback" },
+					python = { "black" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
 					lsp_format = "fallback",
 				},
 				formatters = {
-					rustfmt = {
-						command = "rustup",
-						args = {
-							"run",
-							"nightly",
-							"rustfmt",
-							"--config-path=/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml",
-						},
-						stdin = true,
-					},
+					-- rustfmt = {
+					-- 	command = "rustup",
+					-- 	args = {
+					-- 		"run",
+					-- 		"nightly",
+					-- 		"rustfmt",
+					-- 		"--config-path=/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml",
+					-- 	},
+					-- 	stdin = true,
+					-- },
 				},
 			})
 		end,

@@ -14,9 +14,9 @@ draw_bold_text_with_bright_colors = true
 blinking = "On"
 shape = "Block"
 
-[bell]
-color = "#555555"
-duration = 200
+# [bell]
+# color = "#555555"
+# duration = 200
 
 [debug]
 print_events = false
