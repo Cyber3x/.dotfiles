@@ -14,17 +14,18 @@ return {
 					lsp_format = "fallback",
 				},
 				formatters = {
-					-- rustfmt = {
-					-- 	command = "rustup",
-					-- 	args = {
-					-- 		"run",
-					-- 		"nightly",
-					-- 		"rustfmt",
-					-- 		"--config-path=/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml",
-					-- 	},
-					-- 	stdin = true,
-					-- },
+					rustfmt = {
+						command = "rustup",
+						args = {
+							"run",
+							"nightly",
+							"rustfmt",
+							"--config-path=/home/nlukic/programming/tbtl/mono/projects/eudi/rustfmt.toml",
+						},
+						stdin = true,
+					},
 				},
+				["*"] = { "codespell" },
 			})
 		end,
 	},
