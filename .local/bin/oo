@@ -4,8 +4,7 @@
 # Opens markdown files in nvim with preview via bat
 # ----------------------------------------
 
-# === CONFIG ===
-OBSIDIAN_DIR="${OBSIDIAN_DIR:-$HOME/Documents/notes/second-brain/}"  # Change if needed
+OBSIDIAN_DIR="$HOME/Documents/notes/second-brain"
 
 # === CHECK DEPENDENCIES ===
 for cmd in fd fzf bat nvim; do
@@ -22,14 +21,18 @@ if [[ ! -d "$OBSIDIAN_DIR" ]]; then
 fi
 
 # === MAIN LOGIC ===
-file=$(fd . "$OBSIDIAN_DIR" -e md --strip-cwd-prefix \
-    | fzf --preview "bat --style=numbers --color=always '$OBSIDIAN_DIR/{}' | head -500" \
-           --prompt="📓 Obsidian Note > " \
-           --height=80% --border --ansi)
+cd "$OBSIDIAN_DIR" || exit
 
-# === OPEN FILE IF SELECTED ===
+file=$(
+    fd . -e md \
+    | fzf --preview "bat --style=numbers --color=always {} | head -500" \
+          --prompt="Obsidian Note > " \
+          --border --ansi
+)
+
 if [[ -n "$file" ]]; then
     nvim "$OBSIDIAN_DIR/$file"
+    echo -e "Done editing: \033[1;36m${file}\033[0m"
 else
     echo "No file selected."
 fi
