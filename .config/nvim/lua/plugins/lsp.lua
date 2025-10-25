@@ -141,16 +141,31 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local servers = {
-				rust_analyzer = {
+				cspell_ls = {
 					settings = {
-						["rust-analyzer"] = {
-							cargo = {
-								allFeatures = true,
-							},
-							rustfmt = {},
+						cspell = {
+							configFile = vim.fn.expand("~/.dotfiles/.config/cspell/cspell.json"),
 						},
+						dictionaries = {
+							"my-global-dict",
+						},
+						enabled = true,
 					},
 				},
+
+				-- rust_analyzer = {
+				-- 	settings = {
+				-- 		["rust-analyzer"] = {
+				-- 			cargo = {
+				-- 				allFeatures = true,
+				-- 			},
+				-- 			rustfmt = {
+				-- 				overrideCommand = { "cargo", "+nightly", "--edition", "2021" },
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
+
 				lua_ls = {
 					settings = {
 						Lua = {
