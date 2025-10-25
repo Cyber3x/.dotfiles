@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# ----------------------------------------
+# oo - Fuzzy finder for Obsidian notes
+# Opens markdown files in nvim with preview via bat
+# ----------------------------------------
+
+# === CONFIG ===
+OBSIDIAN_DIR="${OBSIDIAN_DIR:-$HOME/Documents/notes/second-brain/}"  # Change if needed
+
+# === CHECK DEPENDENCIES ===
+for cmd in fd fzf bat nvim; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo "Error: '$cmd' is required but not installed." >&2
+        exit 1
+    fi
+done
+
+# === ENSURE VAULT EXISTS ===
+if [[ ! -d "$OBSIDIAN_DIR" ]]; then
+    echo "Error: Obsidian directory not found at: $OBSIDIAN_DIR" >&2
+    exit 1
+fi
+
+# === MAIN LOGIC ===
+file=$(fd . "$OBSIDIAN_DIR" -e md --strip-cwd-prefix \
+    | fzf --preview "bat --style=numbers --color=always '$OBSIDIAN_DIR/{}' | head -500" \
+           --prompt="📓 Obsidian Note > " \
+           --height=80% --border --ansi)
+
+# === OPEN FILE IF SELECTED ===
+if [[ -n "$file" ]]; then
+    nvim "$OBSIDIAN_DIR/$file"
+else
+    echo "No file selected."
+fi
+
