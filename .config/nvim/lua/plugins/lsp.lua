@@ -141,17 +141,11 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local servers = {
-				cspell_ls = {
-					settings = {
-						cspell = {
-							configFile = vim.fn.expand("~/.dotfiles/.config/cspell/cspell.json"),
-						},
-						dictionaries = {
-							"my-global-dict",
-						},
-						enabled = true,
-					},
-				},
+				-- cspell_ls = {
+				-- 	settings = {
+				-- 		enabled = false,
+				-- 	},
+				-- },
 
 				-- rust_analyzer = {
 				-- 	settings = {

@@ -18,6 +18,7 @@ PATH_DIRS=(
     /usr/local/cuda-12.9/bin
     "$HOME/.local/share/pnpm"
     /opt/nvim-linux-x86_64/bin
+    /home/cyber/tools/bin-manager
 )
 
 # Loop through and add if not already present
