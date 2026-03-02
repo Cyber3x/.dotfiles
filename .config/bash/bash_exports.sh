@@ -19,6 +19,7 @@ PATH_DIRS=(
     "$HOME/.local/share/pnpm"
     /opt/nvim-linux-x86_64/bin
     /home/cyber/tools/bin-manager
+    /home/cyber/.config/composer/vendor/bin
 )
 
 # Loop through and add if not already present

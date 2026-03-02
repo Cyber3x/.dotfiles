@@ -10,11 +10,11 @@ alias ..="z .."
 alias cd="z"
 
 alias files="xdg-open"
-alias ppath='echo "$PATH" | tr ":" "\n"'
+alias ppath='echo "$PATH" | tr ":" "\n" | sort'
 
 alias sl=ls
-alias ls="eza --icons=always"
-alias l="ls -l"
+alias ls="eza --icons=auto"
+alias l="ls -1"
 alias lsc="clear && l"
 alias la="ls -al"
 alias ll="ls -l"

@@ -23,7 +23,7 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
 
--- hwlo world
+opt.cursorline = true
 opt.wrap = false
 --
 -- Enable spell checking

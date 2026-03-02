@@ -1,5 +1,5 @@
 general.import = [
-    #"~/.config/alacritty/themes/themes/rose_pine.toml"
+    # "~/.config/alacritty/themes/themes/rose_pine.toml"
     #"~/.config/alacritty/themes/themes/omni.toml"
     "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
 ]
@@ -20,14 +20,6 @@ render_timer = false
 
 [font]
 size = 13
-
-[font.bold]
-family = "JetBrainsMono Nerd Font Mono"
-style = "Bold"
-
-[font.italic]
-family = "JetBrainsMono Nerd Font Mono"
-style = "Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"
