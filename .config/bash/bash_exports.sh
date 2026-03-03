@@ -16,10 +16,11 @@ PATH_DIRS=(
     /usr/local/go/bin
     /go/bin
     /usr/local/cuda-12.9/bin
-    "$HOME/.local/share/pnpm"
     /opt/nvim-linux-x86_64/bin
-    /home/cyber/tools/bin-manager
-    /home/cyber/.config/composer/vendor/bin
+    "$HOME/.local/share/pnpm"
+    "$HOME/tools/bin-manager"
+    "$HOME/.config/composer/vendor/bin"
+    "$HOME/.local/share/JetBrains/Toolbox/scripts" # make jetbrains tool executable from cmd
 )
 
 # Loop through and add if not already present
