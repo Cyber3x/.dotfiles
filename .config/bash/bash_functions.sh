@@ -1,8 +1,7 @@
 confirm() {
     echo -n "Do you want to run $*? [N/y] "
-    read -N 0 REPLY
-    echo
-    if test "$REPLY" = "y" -o "$REPLY" = "Y"; then
+    read -r REPLY
+    if [[ "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
         "$@"
     else
         echo "Cancelled by user"
@@ -18,7 +17,9 @@ tldrsearch() {
 }
 
 mansearch() {
-    man $(man -k . | fzf --prompt='Man Pages>' | awk '{print $1}')
+    local selection
+    selection=$(man -k . | fzf --prompt='Man Pages> ') || return
+    [[ -n $selection ]] && man "$(awk '{print $1}' <<< "$selection")"
 }
 
 # NOTE: override the default opening of nvim to stop me from opening file that don't exist
@@ -31,36 +32,4 @@ nvim() {
     fi
   done
   command nvim "$@"
-}
-
-
-# run the tbtl ci pipeline locally in any directory
-local_ci() {
-    # Absolute path to allowed base dir
-    base_dir="$HOME/programming/tbtl/mono/projects"
-
-    # Get current dir
-    current_dir=$(pwd)
-
-    build_docs=true
-    if [[ "$1" == "--no-docs" ]]; then
-        build_docs=false
-    fi
-
-    # Check if current dir is inside base_dir
-    case "$current_dir" in
-        "$base_dir" | "$base_dir"/*)
-            echo "Running local CI pipeline..."
-            "$base_dir/scripts/ci/rust/local_ci.sh" || return 1
-
-            if $build_docs; then
-                echo "Building documentation..."
-                srun "$base_dir/scripts/ci/rust/build_documentation.sh" || return 1
-            fi
-            ;;
-        *)
-            echo "❌ Error: You must be inside $base_dir (or its subdirectories) to run this command."
-            return 1
-            ;;
-    esac
 }
