@@ -1,2 +1,3 @@
 **/*.log
 .config/nvim/lazy-lock.json
+.local/bin/mise
