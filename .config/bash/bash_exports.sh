@@ -13,13 +13,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export MANPAGER='nvim +Man!'
 
 PATH_DIRS=(
-    /usr/local/go/bin
-    /go/bin
-    /usr/local/cuda-12.9/bin
-    /opt/nvim-linux-x86_64/bin
-    "$HOME/.local/share/pnpm"
-    "$HOME/tools/bin-manager"
-    "$HOME/.config/composer/vendor/bin"
+    /opt/nvim-linux-x86_64/bin # nvim
+    "$HOME/.config/composer/vendor/bin" # php composer
     "$HOME/.local/share/JetBrains/Toolbox/scripts" # make jetbrains tool executable from cmd
 )
 
@@ -29,9 +24,4 @@ for dir in "${PATH_DIRS[@]}"; do
     export PATH="$PATH:$dir"
   fi
 done
-
-# nvm
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
