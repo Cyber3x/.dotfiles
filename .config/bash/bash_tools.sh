@@ -20,6 +20,9 @@ export FZF_DEFAULT_OPTS=" \
 # uv
 eval "$(uv generate-shell-completion bash)"
 
+# mise
+eval "$(~/.local/bin/mise activate bash)"
+
 # cargo
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
