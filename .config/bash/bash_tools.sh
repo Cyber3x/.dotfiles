@@ -23,5 +23,8 @@ eval "$(uv generate-shell-completion bash)"
 # mise
 eval "$(~/.local/bin/mise activate bash)"
 
+# direnv
+eval "$(direnv hook bash)"
+
 # cargo
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"

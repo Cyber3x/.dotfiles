@@ -13,7 +13,7 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			flavour = "mocha",
+			flavour = "frappe",
 			integrations = {
 				lualine = true,
 				nvimtree = true,
