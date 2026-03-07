@@ -53,7 +53,7 @@ PS1=""
 PS1+="${C_DIM}[${C_USER}\u${C_RESET}@\h${C_DIM}]${C_RESET}"
 
 # [cwd]
-PS1+="${C_DIM}[${C_PATH}\w${C_DIM}]${C_RESET} "
+PS1+="${C_DIM}[${C_PATH}\w${C_RESET}${C_DIM}]${C_RESET} "
 
 # Add nix prompt only if non-empty, no extra spaces
 PS1+='$(ns=$(nix_prompt); [[ -n "$ns" ]] && printf "'${C_NIX}'[ %s] '${C_RESET}'" "$ns")'

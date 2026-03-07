@@ -4,7 +4,7 @@ confirm() {
     if [[ "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
         "$@"
     else
-        echo "Cancelled by user"
+        echo "Canceled by user"
     fi
 }
 
@@ -22,7 +22,7 @@ mansearch() {
     [[ -n $selection ]] && man "$(awk '{print $1}' <<< "$selection")"
 }
 
-# NOTE: override the default opening of nvim to stop me from opening file that don't exist
+#NOTE: override the default opening of nvim to stop me from opening file that don't exist
 nvim() {
   for file in "$@"; do
     # only check if it's not an option (starts with -)
