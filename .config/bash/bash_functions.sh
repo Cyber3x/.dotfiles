@@ -9,17 +9,29 @@ confirm() {
 }
 
 tldrsearch() {
-    tldr -l | fzf \
-      --border \
-      --preview-window='right:70%,nowrap' \
-      --prompt='tldr> ' \
-      --preview 'tldr {1} | bat -l bash --color=always'
+    local selection
+    selection=$(tldr -l | fzf \
+        --prompt='tldr> ' \
+        --height=80% \
+        --layout=reverse \
+        --border=none \
+        --preview-window='right:70%,nowrap' \
+        --preview 'tldr {+} | bat -l markdown --color=always --paging=never --style=plain'
+    ) || return
+    [[ -n $selection ]] && tldr "$selection"
 }
 
 mansearch() {
     local selection
-    selection=$(man -k . | fzf --prompt='Man Pages> ') || return
-    [[ -n $selection ]] && man "$(awk '{print $1}' <<< "$selection")"
+    selection=$(man -k . | fzf \
+        --prompt='Man Pages> ' \
+        --height=80% \
+        --layout=reverse \
+        --preview-window='right:70%,nowrap' \
+        --preview 'man $(awk "{print substr(\$1,2)}" <<< "{}") | bat -l Manpage --color=always --paging=never --style=plain' \
+    ) || return
+
+    [[ -n $selection ]] && man "$(awk '{print substr($1,2)}' <<< "$selection")"
 }
 
 #NOTE: override the default opening of nvim to stop me from opening file that don't exist

@@ -22,11 +22,11 @@ eval "$(zoxide init bash)"
 # zoxide fzf configuration
 export _ZO_FZF_OPTS='--height 40% --layout reverse --border top'
 
-# uv
-eval "$(uv generate-shell-completion bash)"
-
 # mise
 eval "$(~/.local/bin/mise activate bash)"
+
+# uv
+eval "$(uv generate-shell-completion bash)"
 
 # direnv
 eval "$(direnv hook bash)"
