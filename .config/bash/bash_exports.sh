@@ -16,6 +16,7 @@ PATH_DIRS=(
     /opt/nvim-linux-x86_64/bin # nvim
     "$HOME/.config/composer/vendor/bin" # php composer
     "$HOME/.local/share/JetBrains/Toolbox/scripts" # make jetbrains tool executable from cmd
+    "$HOME/tools/imagemagick"
 )
 
 # Loop through and add if not already present
