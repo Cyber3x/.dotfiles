@@ -1,0 +1,4 @@
+current_theme = "catppuccinfrappe"
+themes = ["TokyoNight", "Catppuccin Frappe", "Gruvbox Dark", "Catppuccin Latte"]
+ghostty_conf = "/home/cyber/.config/ghostty/config"
+nvim_init_lua_file = "/home/cyber/.config/nvim/init.lua"

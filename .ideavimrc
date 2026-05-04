@@ -5,7 +5,7 @@ set showmode
 set showcmd
 
 set smartcase
-set clipboard+=unnamed,ideaput " Enable system clipboard integration
+""set clipboard+=unnamed,ideaput " Enable system clipboard integration
 set incsearch
 set ideajoin " join line from below to the end of this one
 set number relativenumber
