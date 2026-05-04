@@ -1,3 +1,5 @@
 **/*.log
 .config/nvim/lazy-lock.json
 .local/bin/mise
+.local/bin/claude
+.local/bin/theme-manager
