@@ -3,3 +3,6 @@
 
 -- disable animations
 vim.g.snacks_animate = false
+
+vim.opt.textwidth = 100
+vim.opt.colorcolumn = "100"
