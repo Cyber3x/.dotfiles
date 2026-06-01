@@ -33,3 +33,6 @@ eval "$(direnv hook bash)"
 
 # cargo
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
