@@ -3,44 +3,45 @@
 set scrolloff=0
 set showmode
 set showcmd
-
 set smartcase
-""set clipboard+=unnamed,ideaput " Enable system clipboard integration
 set clipboard+=unnamedplus
 set incsearch
-set ideajoin " join line from below to the end of this one
+set ideajoin
 set number relativenumber
-
-set visualbell "Stop the error sound
+set visualbell
 
 let mapleader = " "
-"" Remaps
-"" =============================================================================
 
-
-"" Plugin settings
+"" Plugins
+"" ==============================================================================
 set surround
 set highlightedyank
-
 set nerdtree
 set easymotion
 set notimeout
-
-" Which-key settings
 set which-key
+
+"" Which-key appearance
 let g:WhichKey_FontSize = 14
 let g:WhichKey_CommandColor = "#41ead4"
 let g:WhichKey_PrefixColor = "#f335b2"
 let g:WhichKey_SortOrder = "by_key_prefix_first"
 
+"" Which-key descriptions
+"" ==============================================================================
 let g:WhichKeyDesc_leader = "<leader> Leader key"
 
-let g:WhichKeyDesc_leader = "<leader>x Open file explorer"
-
-let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
-let g:WhichKeyDesc_easymotion_prefix = "<leader><leader>"
+let g:WhichKeyDesc_easymotion = "<leader>j EasyMotion"
+let g:WhichKeyDesc_easymotion_search = "<leader>js Jump to char (bidirectional)"
+let g:WhichKeyDesc_easymotion_word = "<leader>jw Jump to word"
+let g:WhichKeyDesc_easymotion_line_f = "<leader>jl Jump forward on line"
+let g:WhichKeyDesc_easymotion_back = "<leader>jb Jump backward by word"
 
 let g:WhichKeyDesc_comment = "<leader>c Comment line"
+
+let g:WhichKeyDesc_code = "<leader>l Language actions"
+let g:WhichKeyDesc_code_format = "<leader>lf Reformat code"
+let g:WhichKeyDesc_code_optimize = "<leader>li Optimize imports"
 
 let g:WhichKeyDesc_fold = "<leader>z Folding"
 let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
@@ -48,31 +49,33 @@ let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
 
 let g:WhichKeyDesc_window = "<leader>w Window splits"
 let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
-let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
+let g:WhichKeyDesc_window_split_horizontally = "<leader>ws Split horizontally"
 let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
 let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
-
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
 let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 
-let g:WhichKeyDesc_action= "<leader>a Actions"
+let g:WhichKeyDesc_action = "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
-let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
-
-let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
+let g:WhichKeyDesc_action_search = "<leader>as Search everywhere"
 
 let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
 let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
-let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
-let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
-let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
+let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search file content"
+let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Recent files"
+let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Recent locations"
+let g:WhichKeyDesc_file_nav_scratch = "<leader>fs New scratch file"
+
+let g:WhichKeyDesc_search = "<leader>s Search"
+let g:WhichKeyDesc_search_grep = "<leader>sg Live grep"
+let g:WhichKeyDesc_search_current = "<leader>/ Grep in current buffer"
 
 let g:WhichKeyDesc_close_tab = "<leader>q Close active tab"
 
-let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
+let g:WhichKeyDesc_refactoring = "<leader>r Refactoring"
 let g:WhichKeyDesc_refactoring_rename = "<leader>rn Rename element"
 let g:WhichKeyDesc_refactoring_method = "<leader>rm Extract method"
 let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce variable"
@@ -80,74 +83,83 @@ let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce field"
 let g:WhichKeyDesc_refactoring_signature = "<leader>rs Change signature"
 let g:WhichKeyDesc_refactoring_all = "<leader>rr Open refactorings list"
 
-let g:WhichKeyDesc_goto = "<leader>g Go to X"
+let g:WhichKeyDesc_goto = "<leader>g Go to / Git"
 let g:WhichKeyDesc_goto_declaration = "<leader>gd Go to Definition"
 let g:WhichKeyDesc_goto_type_declaration = "<leader>gy Go to Type Definition"
 let g:WhichKeyDesc_goto_implementation = "<leader>gi Go to Implementation"
-let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
+let g:WhichKeyDesc_goto_usages = "<leader>gu Show Usages"
 let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
-let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
-let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
-
-let g:WhichKeyDesc_git = "<leader>g Git operations"
-let g:WhichKeyDesc_git_commit = "<leader>gc Open Git commit dialog"
-let g:WhichKeyDesc_git_status = "<leader>gs Open Git status dialog"
-let g:WhichKeyDesc_git_branches = "<leader>gb Open Git branches list"
+let g:WhichKeyDesc_goto_back = "<leader>gf Go Back"
+let g:WhichKeyDesc_git_commit = "<leader>gc Git commit"
+let g:WhichKeyDesc_git_status = "<leader>gs Git status"
+let g:WhichKeyDesc_git_branches = "<leader>gb Git branches"
 
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
-let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
-let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
+let g:WhichKeyDesc_errors_next = "<leader>en Next error"
+let g:WhichKeyDesc_errors_prev = "<leader>ep Previous error"
 
-nnoremap \e :e ~/.ideavimrc<CR> " Quickly open IdeaVim configuration file with \e
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>:echo "IdeaVim configuration reloaded!"<CR>
-nnoremap <c-z> :action ToggleDistractionFreeMode<CR> " ToggleDistractionFreeMode for clean interface
-" Reload IdeaVim configuration with a status bar message
+let g:WhichKeyDesc_terminal = "<leader>t Terminal"
+let g:WhichKeyDesc_terminal_hide = "<leader>T Hide active window"
 
-" Tab navigation
-nnoremap <A-n> :tabnext<CR>
-nnoremap <A-p> :tabprev<CR>\
+let g:WhichKeyDesc_file_explorer = "<leader>x File explorer"
+let g:WhichKeyDesc_recent_files = "<leader><leader> Recent files"
+let g:WhichKeyDesc_back = "<leader>b Go back"
 
-" Scroll up down and center the cursor line
-nnoremap <C-u> <C-u>zz
-nnoremap <C-d> <C-d>zz
+"" Keymaps
+"" ==============================================================================
 
-" Easy visual indentation
-vnoremap < <gv
-vnoremap > >gv
-
-" Popup navigation
-inoremap <C-j> <Action>(PopupMenu-selectNext)
-inoremap <C-k> <Action>(PopupMenu-selectPrev)
-
-nnoremap <A-k> :m .-2<CR>==
-nnoremap <A-j> :m .+1<CR>==
-
-nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>T :action HideActiveWindow<CR>
+" Config
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>:echo "IdeaVim reloaded!"<CR>
 
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
 nnoremap <A-p> :tabprev<CR>
 
-map <leader>r <Action>(ReformatCode)
-map <leader>c <Action>(CommentByLine)
+" Scroll and center
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+" Visual indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" Move lines
+nnoremap <A-k> :m .-2<CR>==
+nnoremap <A-j> :m .+1<CR>==
+
+" Popup navigation
+inoremap <C-j> <Action>(PopupMenu-selectNext)
+inoremap <C-k> <Action>(PopupMenu-selectPrev)
+
+" EasyMotion
+map <leader>js <Plug>(easymotion-s)
+map <leader>jw <Plug>(easymotion-w)
+map <leader>jl <Plug>(easymotion-lineforward)
+map <leader>jb <Plug>(easymotion-b)
+
+" Comment
 map <leader>c <action>(CommentByLineComment)
-map <leader>j <Plug>(easymotion-s)
-" Open NERDTree (use q to exit)
-map <leader>x :NERDTreeToggle<CR>
+
+" Language actions
+map <leader>lf <Action>(ReformatCode)
+map <leader>li <Action>(OptimizeImports)
+
 " Folding
 map <leader>zc :action CollapseAllRegions<CR>
 map <leader>zo :action ExpandAllRegions<CR>
+
 " Window splits
 map <leader>wv <Action>(SplitVertically)
 map <leader>ws <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 
-" Display options
+" Display
 map <leader>dd <action>(ToggleDistractionFreeMode)
 map <leader>dz <action>(ToggleZenMode)
 map <leader>df <action>(ToggleFullScreen)
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 
 " Actions
 map <leader>am <action>(ShowIntentionActions)
@@ -157,11 +169,15 @@ map <leader>as <action>(SearchEverywhere)
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
 map <leader>fc <action>(FindInPath)
-map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
+map <leader><leader> <Action>(RecentFiles)
 
-" Close active tab
+" Search / grep
+map <leader>sg <action>(FindInPath)
+map <leader>/ <action>(FindInPath)
+
+" Close tab
 map <leader>q <action>(CloseContent)
 
 " Refactoring
@@ -179,18 +195,22 @@ nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
 nmap <leader>gf <Action>(Back)
-nmap <leader>gb <Action>(Forward)
 
-" Git windows
+" Git
 map <leader>gc <Action>(CheckinProject)
 map <leader>gs <Action>(ActivateVersionControlToolWindow)
 map <leader>gb <Action>(Git.Branches)
 
 " Errors
-
 map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
 map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
 
-" Map keys for navigating to implementation and going back
-map <leader>b <Action>(Back)                " Go Back
-map <leader>o <Action>(OptimizeImports)
+" Terminal
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>T :action HideActiveWindow<CR>
+
+" File explorer
+map <leader>x :NERDTreeToggle<CR>
+
+" Navigation
+map <leader>b <Action>(Back)

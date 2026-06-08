@@ -12,6 +12,14 @@ cdr() {
   cd $(git rev-parse --show-toplevel)
 }
 
+function gcp() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: gcp <commit message>"
+    return 1
+  fi
+  git add . && git commit -m "$1" && git push
+}
+
 tldrsearch() {
   local selection
   selection=$(
