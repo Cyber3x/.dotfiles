@@ -24,6 +24,10 @@ function port() {
   lsof -i :"$1"
 }
 
+function ports() {
+  lsof -i -P -n | grep LISTEN
+}
+
 tldrsearch() {
   local selection
   selection=$(
