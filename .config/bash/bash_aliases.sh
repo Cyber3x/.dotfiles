@@ -14,6 +14,8 @@ alias ppath='echo "$PATH" | tr ":" "\n" | sort'
 
 alias lg="lazygit"
 
+alias gitundo='git reset --soft HEAD~1 && echo "Last commit undone, changes are staged"'
+
 alias sl=ls
 alias ls="eza --icons=auto"
 alias l="ls -1"
