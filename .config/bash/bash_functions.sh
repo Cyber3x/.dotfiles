@@ -20,6 +20,10 @@ function gcp() {
   git add . && git commit -m "$1" && git push
 }
 
+function port() {
+  lsof -i :"$1"
+}
+
 tldrsearch() {
   local selection
   selection=$(
