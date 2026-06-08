@@ -1,7 +1,7 @@
 [user]
 	email = neven.lukic8@gmail.com
 	name = Neven Lukić
-	signingkey = /home/cyber/.ssh/main-ssh-key.pub
+	signingkey = ~/.ssh/main-ssh-key.pub
 
 [init]
 	defaultBranch = main
@@ -26,3 +26,5 @@
 
 [merge]
     conflictStyle = zdiff3
+[gpg "ssh"]
+	signingKey = ~/.ssh/main-ssh-key.pub
