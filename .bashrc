@@ -1,16 +1,16 @@
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # Load support bash files if present
-for file in ~/.config/bash/bash_{aliases,exports,functions,prompt,tools}.sh; do
-    if [ -f "$file" ]; then
-        . "$file"
-    else
-        echo "⚠️$file not found"
-    fi
+for file in ~/.config/bash/bash_{aliases,exports,functions,prompt,tools,work}.sh; do
+  if [ -f "$file" ]; then
+    . "$file"
+  else
+    echo "⚠️$file not found"
+  fi
 done
 
 # Bash completion
