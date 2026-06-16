@@ -1,6 +1,6 @@
 [user]
 	email = neven.lukic8@gmail.com
-	name = Neven Lukić
+	name = Cyber3x
 	signingkey = ~/.ssh/main-ssh-key.pub
 
 [init]
@@ -26,5 +26,6 @@
 
 [merge]
     conflictStyle = zdiff3
-[gpg "ssh"]
-	signingKey = ~/.ssh/main-ssh-key.pub
+
+[includeIf "gitdir:~/work/"]
+  path = ~/work/.gitconfig-work
