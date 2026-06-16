@@ -28,6 +28,18 @@ function ports() {
   lsof -i -P -n | grep LISTEN
 }
 
+function prettify-json() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: prettify-json <file>"
+    return 1
+  fi
+  if [[ ! -f "$1" ]]; then
+    echo "Error: file '$1' not found"
+    return 1
+  fi
+  jq . "$1" | sponge "$1"
+}
+
 tldrsearch() {
   local selection
   selection=$(
