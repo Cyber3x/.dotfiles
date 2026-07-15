@@ -13,9 +13,10 @@ C_DIM='\[\e[2m\]'
 C_RESET='\[\e[0m\]'
 C_BOLD='\[\e[1m\]'
 
-C_USER='\[\e[38;5;208;1m\]'   # orange
-C_PATH='\[\e[38;5;110;1m\]'   # cyan
-C_NIX='\[\e[38;5;37m\]'         # dark cyan
+# Default theme; hosts/<hostname>.sh can set these before this file loads
+C_USER="${C_USER:-\[\e[38;5;208;1m\]}"   # orange
+C_PATH="${C_PATH:-\[\e[38;5;110;1m\]}"   # cyan
+C_NIX="${C_NIX:-\[\e[38;5;37m\]}"        # dark cyan
 
 
 # -----------------------------
@@ -41,7 +42,8 @@ nix_prompt() {
 # -----------------------------
 # Git Branch Injection
 # -----------------------------
-PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "[%s]")'
+# Prepend to PROMPT_COMMAND without clobbering hooks added by zoxide/mise/direnv
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "[%s]")'"${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 
 
 # -----------------------------
