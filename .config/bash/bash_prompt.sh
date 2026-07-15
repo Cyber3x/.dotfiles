@@ -17,6 +17,7 @@ C_BOLD='\[\e[1m\]'
 C_USER="${C_USER:-\[\e[38;5;208;1m\]}"   # orange
 C_PATH="${C_PATH:-\[\e[38;5;110;1m\]}"   # cyan
 C_NIX="${C_NIX:-\[\e[38;5;37m\]}"        # dark cyan
+C_HOST="${C_HOST:-}"                     # default: terminal foreground
 
 
 # -----------------------------
@@ -52,7 +53,7 @@ PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "[%s]")'"${PROMPT_COMMAND:+;$PROMPT_COMMAND
 PS1=""
 
 # [user@host]
-PS1+="${C_DIM}[${C_USER}\u${C_RESET}@\h${C_DIM}]${C_RESET}"
+PS1+="${C_DIM}[${C_USER}\u${C_RESET}@${C_HOST}\h${C_RESET}${C_DIM}]${C_RESET}"
 
 # [cwd]
 PS1+="${C_DIM}[${C_PATH}\w${C_RESET}${C_DIM}]${C_RESET} "
