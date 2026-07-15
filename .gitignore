@@ -1,6 +1,6 @@
 **/*.log
 .config/nvim/lazy-lock.json
-.config/bash/bash_work.sh
+.config/bash/hosts/work-pc.sh
 .local/bin/mise
 .local/bin/claude
 .local/bin/theme-manager

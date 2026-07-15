@@ -5,7 +5,7 @@ case $- in
 esac
 
 # Load support bash files if present
-for file in ~/.config/bash/bash_{aliases,exports,functions,tools,work}.sh; do
+for file in ~/.config/bash/bash_{aliases,exports,functions,tools}.sh; do
   if [ -f "$file" ]; then
     . "$file"
   else
