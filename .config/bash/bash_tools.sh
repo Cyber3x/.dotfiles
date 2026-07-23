@@ -36,3 +36,6 @@ eval "$(direnv hook bash)"
 
 # brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+
+# thefuck
+eval "$(thefuck --alias)"

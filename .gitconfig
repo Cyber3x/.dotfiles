@@ -26,6 +26,9 @@
 
 [merge]
     conflictStyle = zdiff3
+	tool = nvimdiff
 
 [includeIf "gitdir:~/work/"]
   path = ~/work/.gitconfig-work
+[mergetool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
