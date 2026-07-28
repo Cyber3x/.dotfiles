@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "default",
     "ask": [
       "Bash(rm *)",
       "Bash(sed *)",
@@ -12,6 +13,22 @@
       "Bash(unlink *)",
       "Bash(docker stop *)",
       "Bash(docker rm *)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf $HOME)",
+      "Bash(chmod 777 *)",
+      "Bash(chown -R *)",
+      "Bash(curl * | bash)",
+      "Bash(curl * | sh)",
+      "Bash(wget * | bash)",
+      "Bash(wget * | sh)",
+      "Bash(eval *)",
+      "Bash(sudo rm -rf *)",
+      "Bash(mkfs *)",
+      "Bash(dd if=* of=/dev/*)"
     ]
   },
   "model": "opus",
