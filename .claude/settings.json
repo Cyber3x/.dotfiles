@@ -9,7 +9,9 @@
       "Bash(dd *)",
       "Bash(truncate *)",
       "Bash(shred *)",
-      "Bash(unlink *)"
+      "Bash(unlink *)",
+      "Bash(docker stop *)",
+      "Bash(docker rm *)"
     ]
   },
   "model": "opus",
