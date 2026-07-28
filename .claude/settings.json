@@ -56,5 +56,11 @@
   "verbose": true,
   "showThinkingSummaries": true,
   "spinnerTipsEnabled": false,
-  "prefersReducedMotion": true
+  "prefersReducedMotion": true,
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Processing"
+    ]
+  }
 }
