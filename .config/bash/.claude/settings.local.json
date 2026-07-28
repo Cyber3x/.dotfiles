@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/cyber/.claude/**)",
+      "Read(//home/cyber/.claude/skills/**)"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "ask": [
+      "Bash(rm *)",
+      "Bash(sed *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(mv *)",
+      "Bash(dd *)",
+      "Bash(truncate *)",
+      "Bash(shred *)",
+      "Bash(unlink *)"
+    ]
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "phpstorm-plugin@phpstorm-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "phpstorm-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "jetbrains/phpstorm-claude-marketplace"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "verbose": true,
+  "showThinkingSummaries": true
+}
