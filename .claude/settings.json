@@ -28,7 +28,16 @@
       "Bash(eval *)",
       "Bash(sudo rm -rf *)",
       "Bash(mkfs *)",
-      "Bash(dd if=* of=/dev/*)"
+      "Bash(dd if=* of=/dev/*)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -fd*)",
+      "Bash(shutdown *)",
+      "Bash(reboot*)",
+      "Bash(poweroff*)",
+      "Bash(docker system prune *)",
+      "Bash(docker volume rm *)"
     ]
   },
   "model": "opus",
