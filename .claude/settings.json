@@ -54,5 +54,7 @@
   },
   "effortLevel": "high",
   "verbose": true,
-  "showThinkingSummaries": true
+  "showThinkingSummaries": true,
+  "spinnerTipsEnabled": false,
+  "prefersReducedMotion": true
 }
