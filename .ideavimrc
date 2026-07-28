@@ -101,7 +101,9 @@ let g:WhichKeyDesc_errors_prev = "<leader>ep Previous error"
 let g:WhichKeyDesc_terminal = "<leader>t Terminal"
 let g:WhichKeyDesc_terminal_hide = "<leader>T Hide active window"
 
-let g:WhichKeyDesc_file_explorer = "<leader>x File explorer"
+let g:WhichKeyDesc_file_explorer = "<leader>x File tree"
+let g:WhichKeyDesc_file_explorer_toggle = "<leader>xx Toggle explorer"
+let g:WhichKeyDesc_file_explorer_reveal = "<leader>xf Reveal current file in tree"
 let g:WhichKeyDesc_recent_files = "<leader><leader> Recent files"
 let g:WhichKeyDesc_back = "<leader>b Go back"
 
@@ -209,8 +211,9 @@ map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>T :action HideActiveWindow<CR>
 
-" File explorer
-map <leader>x :NERDTreeToggle<CR>
+" File tree
+map <leader>xx :NERDTreeToggle<CR>
+map <leader>xf <Action>(SelectInProjectView)
 
 " Navigation
 map <leader>b <Action>(Back)
