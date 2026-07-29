@@ -1,4 +1,10 @@
 {
+  "model": "opus",
+  "effortLevel": "high",
+  "verbose": true,
+  "showThinkingSummaries": true,
+  "spinnerTipsEnabled": false,
+  "prefersReducedMotion": true,
   "permissions": {
     "defaultMode": "default",
     "ask": [
@@ -40,9 +46,12 @@
       "Bash(docker volume rm *)"
     ]
   },
-  "model": "opus",
   "enabledPlugins": {
     "phpstorm-plugin@phpstorm-marketplace": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
   },
   "extraKnownMarketplaces": {
     "phpstorm-marketplace": {
@@ -52,11 +61,6 @@
       }
     }
   },
-  "effortLevel": "high",
-  "verbose": true,
-  "showThinkingSummaries": true,
-  "spinnerTipsEnabled": false,
-  "prefersReducedMotion": true,
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
