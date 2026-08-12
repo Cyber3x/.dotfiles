@@ -1,25 +1,5 @@
 {
-  "model": "opus",
-  "effortLevel": "high",
-  "verbose": true,
-  "showThinkingSummaries": true,
-  "spinnerTipsEnabled": false,
-  "prefersReducedMotion": true,
   "permissions": {
-    "defaultMode": "default",
-    "ask": [
-      "Bash(rm *)",
-      "Bash(sed *)",
-      "Bash(chmod *)",
-      "Bash(chown *)",
-      "Bash(mv *)",
-      "Bash(dd *)",
-      "Bash(truncate *)",
-      "Bash(shred *)",
-      "Bash(unlink *)",
-      "Bash(docker stop *)",
-      "Bash(docker rm *)"
-    ],
     "deny": [
       "Bash(rm -rf /)",
       "Bash(rm -rf ~)",
@@ -44,14 +24,29 @@
       "Bash(poweroff*)",
       "Bash(docker system prune *)",
       "Bash(docker volume rm *)"
-    ]
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(sed *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(mv *)",
+      "Bash(dd *)",
+      "Bash(truncate *)",
+      "Bash(shred *)",
+      "Bash(unlink *)",
+      "Bash(docker stop *)",
+      "Bash(docker rm *)"
+    ],
+    "defaultMode": "default"
   },
-  "enabledPlugins": {
-    "phpstorm-plugin@phpstorm-marketplace": true
-  },
+  "model": "claude-opus-4-8",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "phpstorm-plugin@phpstorm-marketplace": true
   },
   "extraKnownMarketplaces": {
     "phpstorm-marketplace": {
@@ -61,10 +56,15 @@
       }
     }
   },
+  "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
       "Processing"
     ]
-  }
+  },
+  "effortLevel": "high",
+  "prefersReducedMotion": true,
+  "showThinkingSummaries": true,
+  "verbose": false
 }

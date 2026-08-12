@@ -34,3 +34,5 @@ alias pythonheretoo='export PYTHONPATH=$PYTHONPATH:.' # Add current dir to path
 alias python3.12='uv run --python=3.12 python3'
 alias python3.14='uv run --python=3.14 python3'
 alias py="python"
+
+alias weather="curl wttr.in"
