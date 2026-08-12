@@ -28,14 +28,8 @@ eval "$(~/.local/bin/mise activate bash)"
 # uv
 eval "$(uv generate-shell-completion bash)"
 
-# direnv
-eval "$(direnv hook bash)"
-
 # cargo
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-
-# thefuck
-eval "$(thefuck --alias)"
