@@ -40,7 +40,7 @@
     ],
     "defaultMode": "default"
   },
-  "model": "claude-opus-4-8",
+  "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"

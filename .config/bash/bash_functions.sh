@@ -8,6 +8,16 @@ confirm() {
   fi
 }
 
+notifyme() {
+  local start=$SECONDS
+  "$@"
+  local rc=$? dur=$((SECONDS - start))
+  [ $rc -eq 0 ] &&
+    notify-send "Done in ${dur}s" "$*" ||
+    notify-send -u critical "Failed (exit $rc, ${dur}s)" "$*"
+  return $rc
+}
+
 cdr() {
   cd $(git rev-parse --show-toplevel)
 }
