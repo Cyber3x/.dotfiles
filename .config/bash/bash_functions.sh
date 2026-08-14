@@ -13,8 +13,8 @@ notifyme() {
   "$@"
   local rc=$? dur=$((SECONDS - start))
   [ $rc -eq 0 ] &&
-    notify-send "Done in ${dur}s" "$*" ||
-    notify-send -u critical "Failed (exit $rc, ${dur}s)" "$*"
+    notify-send -i emblem-ok-symbolic -a "Task done" "Duration: ${dur}s" "$*" ||
+    notify-send -i dialog-error -u critical -a "Task failed" "Exit code $rc, duration: ${dur}s" "$*"
   return $rc
 }
 
