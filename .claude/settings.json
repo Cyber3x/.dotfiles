@@ -40,7 +40,7 @@
     ],
     "defaultMode": "default"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5-1[1m]",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -66,5 +66,6 @@
   "effortLevel": "high",
   "prefersReducedMotion": true,
   "showThinkingSummaries": true,
-  "verbose": false
+  "verbose": false,
+  "autoMemoryDirectory": "~/Documents/notes/ai-memories"
 }

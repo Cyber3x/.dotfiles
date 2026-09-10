@@ -21,13 +21,33 @@ The vault uses a GTD (Getting Things Done) workflow with the following folders u
 
 ### Project notes
 
-Every note in `GTD/projects/` **must** include a `# Next action::` heading followed by the immediate next physical action. Example:
+Every note in `GTD/projects/` and `GTD/someday/` **must** carry a `next_action` frontmatter property holding the immediate next physical action. Example:
 
-```
-# Next action:: pull repo from Hetzner and run locally
+```yaml
+---
+priority: medium
+location: Computer
+next_action: "pull repo from Hetzner and run locally"
+---
 ```
 
-This is a top-level markdown heading, not a hashtag tag. When moving a note into `GTD/projects/`, always add or update this heading. When editing a project note, keep the `# Next action::` line current.
+This is a YAML property, **not** a body heading and not a Dataview inline `Next action::` field — the old inline form was migrated away and Bases cannot read it. When moving a note into `GTD/projects/`, always add or update this property. When editing a note, keep `next_action` current.
+
+Recognised properties:
+
+- `next_action` — required, quoted string
+- `priority` — `high` / `medium` / `low` (drives grouping in the Active view)
+- `location` — GTD context that enables the work, e.g. `Computer`, `Home`, `Errands`. Optional; shows as `-` when absent
+- `status` — set to `inactive` to hide a note from the Active view
+
+### Projects dashboard
+
+`GTD/Projects.md` renders two views from `GTD/Projects.base` (Obsidian Bases, a core plugin):
+
+- **Active** — `GTD/projects`, grouped by priority
+- **Someday** — `GTD/someday`
+
+Both are embedded with `![[Projects.base#ViewName]]`. Edit columns and filters in `Projects.base`, not in the note. Bases reads YAML frontmatter only, so any new queryable field has to be a property.
 
 ## Naming conventions
 
