@@ -66,6 +66,5 @@
   "effortLevel": "high",
   "prefersReducedMotion": true,
   "showThinkingSummaries": true,
-  "verbose": false,
-  "autoMemoryDirectory": "~/Documents/notes/ai-memories"
+  "verbose": false
 }
