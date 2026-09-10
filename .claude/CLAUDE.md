@@ -1,2 +1,2 @@
-- when the users ask for a git commit, you write it as one line and do not mention nor attribute AI
-agents.
+- when the user asks for a git commit, you write it as one line. Never mention any AI agents nor attribute AI
+agents in the commit or the commit message.
