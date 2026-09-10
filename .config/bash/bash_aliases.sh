@@ -36,3 +36,4 @@ alias python3.14='uv run --python=3.14 python3'
 alias py="python"
 
 alias weather="curl wttr.in"
+alias hl="rg --passthru"
