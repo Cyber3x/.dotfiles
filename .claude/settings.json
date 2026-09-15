@@ -27,7 +27,6 @@
     ],
     "ask": [
       "Bash(rm *)",
-      "Bash(sed *)",
       "Bash(chmod *)",
       "Bash(chown *)",
       "Bash(mv *)",
