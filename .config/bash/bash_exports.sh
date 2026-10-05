@@ -9,10 +9,11 @@ shopt -s checkwinsize                                        # Update window siz
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # Prettify less
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
+export FCEDIT='nvim'
 export MANPAGER='nvim +Man!'
 
 export ANDROID_HOME="$HOME/Android/Sdk"
+export PYTHON="$HOME/.venvs/sumo-tools/bin/python" # for sumo
 
 PATH_DIRS=(
   /opt/nvim-linux-x86_64/bin                     # nvim

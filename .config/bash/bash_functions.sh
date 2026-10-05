@@ -8,6 +8,16 @@ confirm() {
   fi
 }
 
+notifyme() {
+  local start=$SECONDS
+  "$@"
+  local rc=$? dur=$((SECONDS - start))
+  [ $rc -eq 0 ] &&
+    notify-send -i emblem-ok-symbolic -a "Task done" "Duration: ${dur}s" "$*" ||
+    notify-send -i dialog-error -u critical -a "Task failed" "Exit code $rc, duration: ${dur}s" "$*"
+  return $rc
+}
+
 cdr() {
   cd $(git rev-parse --show-toplevel)
 }

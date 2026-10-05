@@ -23,19 +23,13 @@ eval "$(zoxide init bash)"
 export _ZO_FZF_OPTS='--height 40% --layout reverse --border top'
 
 # mise
-eval "$(~/.local/bin/mise activate bash)"
+eval "$(mise activate bash)"
 
 # uv
 eval "$(uv generate-shell-completion bash)"
-
-# direnv
-eval "$(direnv hook bash)"
 
 # cargo
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-
-# thefuck
-eval "$(thefuck --alias)"
