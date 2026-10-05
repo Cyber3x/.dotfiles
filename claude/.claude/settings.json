@@ -1,0 +1,69 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf $HOME)",
+      "Bash(chmod 777 *)",
+      "Bash(chown -R *)",
+      "Bash(curl * | bash)",
+      "Bash(curl * | sh)",
+      "Bash(wget * | bash)",
+      "Bash(wget * | sh)",
+      "Bash(eval *)",
+      "Bash(sudo rm -rf *)",
+      "Bash(mkfs *)",
+      "Bash(dd if=* of=/dev/*)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -fd*)",
+      "Bash(shutdown *)",
+      "Bash(reboot*)",
+      "Bash(poweroff*)",
+      "Bash(docker system prune *)",
+      "Bash(docker volume rm *)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(mv *)",
+      "Bash(dd *)",
+      "Bash(truncate *)",
+      "Bash(shred *)",
+      "Bash(unlink *)",
+      "Bash(docker stop *)",
+      "Bash(docker rm *)"
+    ],
+    "defaultMode": "auto"
+  },
+  "model": "claude-fable-5-1[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "phpstorm-plugin@phpstorm-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "phpstorm-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "jetbrains/phpstorm-claude-marketplace"
+      }
+    }
+  },
+  "spinnerTipsEnabled": false,
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Processing"
+    ]
+  },
+  "effortLevel": "high",
+  "prefersReducedMotion": true,
+  "showThinkingSummaries": true,
+  "verbose": false
+}
