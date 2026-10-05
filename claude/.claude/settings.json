@@ -64,6 +64,5 @@
   },
   "effortLevel": "high",
   "prefersReducedMotion": true,
-  "showThinkingSummaries": true,
-  "verbose": false
+  "showThinkingSummaries": true
 }
