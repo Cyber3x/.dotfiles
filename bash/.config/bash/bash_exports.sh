@@ -1,8 +1,8 @@
 # --- History settings ---
 HISTCONTROL=ignoreboth # No duplicate lines or leading spaces
 shopt -s histappend    # Append history instead of overwrite
-HISTSIZE=1000          # Number of commands stored in memory
-HISTFILESIZE=2000      # Number of commands stored in file
+HISTSIZE=10000         # Number of commands stored in memory
+HISTFILESIZE=20000     # Number of commands stored in file
 
 # --- Terminal behavior ---
 shopt -s checkwinsize # Update window size after each command

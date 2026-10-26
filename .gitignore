@@ -1,3 +1,2 @@
 **/*.log
-nvim/.config/nvim/lazy-lock.json
 bash/.config/bash/hosts/bogdan.sh

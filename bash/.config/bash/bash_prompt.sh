@@ -1,9 +1,22 @@
 # -----------------------------
 # Git Prompt
 # -----------------------------
-if [ -f ~/.config/bash/git-prompt.sh ]; then
-    . ~/.config/bash/git-prompt.sh
-fi
+export GIT_PS1_SHOWDIRTYSTATE=1        # Show staged (+) / unstaged (*) changes
+export GIT_PS1_SHOWUNTRACKEDFILES=1    # Show untracked files (%)
+export GIT_PS1_SHOWSTASHSTATE=1        # Show stash ($)
+export GIT_PS1_SHOWUPSTREAM="auto"     # Show upstream status
+export GIT_PS1_SHOWCOLORHINTS=1        # Color hints
+
+# git ships the prompt script; its path differs per distro
+for file in \
+  /run/current-system/sw/share/bash-completion/completions/git-prompt.sh \
+  /usr/share/git/completion/git-prompt.sh \
+  /usr/lib/git-core/git-sh-prompt; do
+  if [ -f "$file" ]; then
+    . "$file"
+    break
+  fi
+done
 
 
 # -----------------------------
