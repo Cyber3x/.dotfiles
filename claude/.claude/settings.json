@@ -60,7 +60,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/home/neven/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "[ -f ~/.claude/hooks/herdr-agent-state.sh ] && bash ~/.claude/hooks/herdr-agent-state.sh session || true",
             "timeout": 10
           }
         ]
