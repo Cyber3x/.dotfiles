@@ -36,3 +36,9 @@
 	autoSetupRemote = true
 [alias]
 	glo = log --oneline
+[pull]
+	rebase = true
+
+# Per-machine overrides (e.g. user.signingkey), not tracked.
+[include]
+	path = ~/.gitconfig.local
