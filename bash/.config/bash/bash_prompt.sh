@@ -44,7 +44,8 @@ nix_prompt() {
 # Git Branch Injection
 # -----------------------------
 # Prepend to PROMPT_COMMAND without clobbering hooks added by zoxide/mise/direnv
-PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "[%s]")'"${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+# [git branch] (bold); __git_ps1 adds the brackets, \001/\002 mark the colors as zero-width
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "\001\e[2m\002[\001\e[0;1m\002%s\001\e[0;2m\002]\001\e[0m\002")'"${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 
 
 # -----------------------------
@@ -56,13 +57,13 @@ PS1=""
 PS1+="${C_DIM}[${C_USER}\u${C_RESET}@${C_HOST}\h${C_RESET}${C_DIM}]${C_RESET}"
 
 # [cwd]
-PS1+="${C_DIM}[${C_PATH}\w${C_RESET}${C_DIM}]${C_RESET} "
+PS1+="${C_DIM}[${C_PATH}\w${C_RESET}${C_DIM}]${C_RESET}"
 
-# Add nix prompt only if non-empty, no extra spaces
-PS1+='$(ns=$(nix_prompt); [[ -n "$ns" ]] && printf "'${C_NIX}'[ %s] '${C_RESET}'" "$ns")'
+# [nix shell], only inside one
+PS1+='$(ns=$(nix_prompt); [[ -n "$ns" ]] && printf "'${C_DIM}'['${C_RESET}${C_NIX}' %s'${C_RESET}${C_DIM}']'${C_RESET}'" "$ns")'
 
-# git branch (bold)
-PS1+="${C_BOLD}\${PS1_CMD1}"
+# git branch
+PS1+="\${PS1_CMD1}"
 
 # newline + prompt symbol
 PS1+="\n${C_DIM}\$${C_RESET} "
