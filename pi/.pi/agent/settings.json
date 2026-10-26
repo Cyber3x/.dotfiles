@@ -1,0 +1,18 @@
+{
+  "lastChangelogVersion": "1.4.0",
+  "defaultProvider": "claude-bridge",
+  "defaultModel": "claude-opus-5-5",
+  "defaultTools": [
+    "+grep",
+    "+find",
+    "+ls",
+    "+codemode"
+  ],
+  "packages": [
+    "npm:pi-claude-bridge",
+    "npm:pi-zentui"
+  ],
+  "skills": [
+    "~/.claude/skills/synced"
+  ]
+}

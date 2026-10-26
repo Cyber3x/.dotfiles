@@ -1,0 +1,6 @@
+{
+  "provider": {
+    "plan": "pro",
+    "pathToClaudeCodeExecutable": "/run/current-system/sw/bin/claude"
+  }
+}

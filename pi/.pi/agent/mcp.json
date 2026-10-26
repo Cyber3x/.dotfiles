@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "youtrack": {
+      "url": "https://youtrack.sofascore.com/mcp",
+      "oauth": {
+        "clientId": "https://pi.dev/oauth/client.json",
+        "callbackUrl": "http://127.0.0.1/callback"
+      }
+    }
+  }
+}
