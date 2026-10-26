@@ -43,13 +43,6 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
-  "enabledPlugins": {
-    "postgres@backend-ai-toolkit": true,
-    "production-logs@backend-ai-toolkit": true,
-    "scraper-errors@backend-ai-toolkit": true,
-    "standard-schedule-match-scraper-builder@backend-ai-toolkit": true,
-    "feed-data-debug@backend-ai-toolkit": true
-  },
   "spinnerTipsEnabled": false,
   "spinnerVerbs": {
     "mode": "replace",
@@ -60,5 +53,18 @@
   "effortLevel": "high",
   "prefersReducedMotion": true,
   "showThinkingSummaries": true,
-  "hooks": {"SessionStart":[{"matcher":"^(startup|resume|clear|compact|fork)$","hooks":[{"type":"command","command":"bash '/home/neven/.claude/hooks/herdr-agent-state.sh' session","timeout":10}]}]}
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/neven/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
 }
